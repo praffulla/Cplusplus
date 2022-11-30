@@ -1,0 +1,32 @@
+If we want to hide complexity of any object by hiding its function's implementation, we can use abstraction. 
+
+Example: 
+
+/* It is the contract. Who ever takes this contract has to implement this function.*/
+Class AbstractEmployee {  
+    /* This is pure virtual function that is no definition in base class*/
+    virtual void AskForPromotion()=0;
+}
+
+/* This is how Employee class is taking the contract so it must implement AskForPromotion*/
+class Employee:AbstractEmployee {
+
+  /* By default access modifier is private*/
+  string Name;
+  int Age;
+  
+  /*getters and setters of private field*/
+  
+  Employee(string name, int Age) {...}
+  
+  void AskForPromotion {...} //implementation here. 
+
+}
+
+
+int main () {
+  Employee e1 = Employee("Harry", 25);
+  
+  /* Application which are using this Employee class knows that "AskForPromotion" must already be implemented */
+  e1.AskForPromotion();
+}
