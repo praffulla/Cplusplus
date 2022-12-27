@@ -1,0 +1,4 @@
+Base class function and members are inherited by child class if they are public or protected. 
+But there is a catch:
+
+ class Child : public Parent {}. => public members of base class in inherited by child class and they are also public. 
