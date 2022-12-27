@@ -2,3 +2,10 @@ Base class function and members are inherited by child class if they are public 
 But there is a catch:
 
  class Child : public Parent {}. => public members of base class in inherited by child class and they are also public. 
+ class Child : private Parent {} => public members of base class in inherited by child class but they are private in child class.
+ 
+ Check this link for example:
+https://www.programiz.com/cpp-programming/public-protected-private-inheritance#:~:text=public%2C%20protected%20and%20private%20inheritance%20in%20C%2B%2B&text=protected%20inheritance%20makes%20the%20public,private%20in%20the%20derived%20class
+
+
+
