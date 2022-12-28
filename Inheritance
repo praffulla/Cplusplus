@@ -9,6 +9,50 @@ https://www.programiz.com/cpp-programming/public-protected-private-inheritance#:
 
 
 
+==================== Virtual inheritance ========================
+
+Diamond problem:
+
+class Base {
+	protected:
+		int val;
+		
+};
+
+class derived1 : public Base {
+	public:
+		derived1() {
+			val = 1;
+		}
+};
+
+class derived2 : public Base {
+	public:
+		derived2() {
+			val = 2;
+		}
+};
+
+class derived3 : public derived1, public derived2 {
+	public:
+		void getValue() {
+			cout << "val is " << "val" << "\n";
+		}
+}
+
+int main () {
+	derived3 d;
+	d.getVal() ===> this will ambigious error
+
+}
+
+
+How to resolve this problem:
+
+1. Use scope resolution => that is use derived2::val or derived1::val and it will be resolved.
+
+
+2. Use virtual keyword when derived 1 and derived 2 are inheriting. Then only one copy of variables are there in derived3 memory.
 
 ==================================== Constructor with Inheritence================
 
