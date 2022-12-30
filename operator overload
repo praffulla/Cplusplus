@@ -1,0 +1,103 @@
+Operator can be overloaded excpet few like sizeof(), member variable access etc.
+
+Example 1: Unary Operator overload as a prefix.
+
+
+#include <iostream>
+using namespace std;
+
+class Add {
+    public:
+    int a;
+    Add (int x) {
+        a = x;
+    }
+    void operator ++ () {
+       a = a + 25;
+    }
+    
+};
+
+int main()
+{
+   
+   Add ad(5);
+   ++ad;
+   cout << ad.a;
+   return 0;
+}
+
+Example 2: Unary operator overload with postfix.
+
+#include <iostream>
+
+using namespace std;
+
+class Add {
+    public:
+    int a;
+    Add (int x) {
+        a = x;
+    }
+    void operator ++ (int z) {
+       a = a*25;
+    }
+    
+};
+
+
+int main()
+{
+   
+   Add ad(5);
+   ad++;
+   cout << ad.a;
+   return 0;
+}
+
+When overloading an postfix operator, then argument is necessary. 
+
+Example 3: Binary operator overload 
+
+
+#include <iostream>
+
+using namespace std;
+
+class Demo {
+    public:
+    int x;
+    
+    Demo() {};
+  
+    Demo(int a) {
+        x = a;
+    }
+    void display () {
+        cout << x << "\n";
+    }
+    
+    Demo operator + (Demo &b){
+        Demo d;
+        d.x = b.x + x;
+        return d;
+    }
+    
+    
+};
+
+int main()
+{
+   
+    Demo d1(5);
+    Demo d2(10);
+    Demo d3 = d1 + d2;
+    d3.display();
+    return 0;
+}
+
+
+
+
+
+
