@@ -1,0 +1,40 @@
+1. Virtual destructor.
+
+
+#include <iostream>
+using namespace std;
+
+class Base {
+    
+public:
+    int a;
+
+   (virtual)  ~Base() {
+        cout << "In base destructor" << "\n";
+    }
+};
+
+class Derive : public Base {
+ 
+    ~Derive() {
+        cout << "In Derive destructor" << "\n";
+    }
+};
+
+int main() {
+    // Write C++ code here
+   
+    
+    Base *b = new Derive();
+    
+    delete b;  => This will only call Base class destructor and therefore leak of Derive class.
+    
+    return 0;
+}
+
+But if we make Base class destructor virtual then base class destructor will also be called. 
+
+The reason being, when we make it virtual, Derive class object will have virtual table where destructor of derived class will point to derived class overriden destructor
+. so first derived class will be finished. 
+
+https://stackoverflow.com/questions/2690473/how-do-virtual-destructors-work
