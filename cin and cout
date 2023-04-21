@@ -1,0 +1,16 @@
+
+1.
+
+string str;
+cin >> str;
+
+Now if you write Hello world in stdin, it will take only hello i.e, once it hits space, it will quit taking input. 
+So now how you will take multiple space input ?
+
+string str;
+getline(cin, str);   => 
+
+
+===================================================================================================================================================
+
+2. 
