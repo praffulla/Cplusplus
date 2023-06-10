@@ -1,0 +1,49 @@
+Look at this code:
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+class StaticDemo {
+    
+    public:
+        StaticDemo();
+        void printVar();
+    
+    private:
+        static int static_a_var;
+};
+
+StaticDemo::StaticDemo() {
+    cout << "const called" << "\n";
+    static_a_var++;
+}
+
+void
+StaticDemo::printVar() {
+    cout << "static_a_var is " << static_a_var << "\n";
+}
+
+int StaticDemo::static_a_var = 0;
+
+int main() {
+    // Write C++ code here
+    
+    StaticDemo sD;
+    sD.printVar();
+    StaticDemo sD1;
+    sD1.printVar();
+    StaticDemo sD2;
+    
+    return 0;
+}
+
+Things learned:
+1. Static data members are created once for the whole program. So every object of this Class will share this static data member.
+2. If you do not write "int StaticDemo::static_a_var = 0;" outside the class, linker error will come. Because ->
+
+"Static members are only declared in a class declaration, not defined
+. They must be explicitly defined outside the class using the scope resolution operator."
+
+3. One application is to check how many objects of this class is created.
+
