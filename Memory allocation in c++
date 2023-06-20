@@ -1,0 +1,35 @@
+Example 1:
+
+Class Demo {
+
+  public:
+    Demo();
+    ~Demo();
+    print();
+  private:
+    int x;
+};
+
+Demo::Demo() {
+
+}
+
+Demo::~Demo() {
+
+}
+
+Demo::print(){
+
+
+}
+
+int main () {
+  Demo d1;
+  Demo d2;
+  d1.print();
+  d2.print();
+}
+
+
+The functions here (including constructor/destructor) are stored in common places, while object's member variable are stored in different memories.
+I am imagining as of now that, d1 and d2 objects (member variables) are stored in stack. 
