@@ -1,4 +1,4 @@
-Please read follwoing link to understand how birtual functions are taken care in C++. 
+Please read follwoing link to understand how virtual functions are taken care in C++. 
 
 https://www.learncpp.com/cpp-tutorial/the-virtual-table/#:~:text=First%2C%20every%20class%20that%20uses,by%20objects%20of%20the%20class.
 
